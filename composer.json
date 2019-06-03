@@ -1,0 +1,30 @@
+{
+    "name": "studio451/yii2-json-rpc-2.0-api",
+    "description": "JSON RPC 2.0 for Yii2 API with CRUD+ actions",
+    "keywords": ["yii", "yii2", "json", "rpc", "rpc2", "jsonrpc", "json-rpc", "jsonrpc2", "json-rpc2", "json-rpc-2.0", "CRUD"],
+    "license": "BSD-3-Clause",
+    "homepage": "https://yii2jsonrpc2api.studio451.ru",
+    "type": "yii2-extension",
+    "support": {
+        "issues": "https://github.com/studio451/yii2-json-rpc-2.0-api/issues",
+        "source": "https://github.com/studio451/yii2-json-rpc-2.0-api"
+    },
+    "authors": [
+        {
+            "name": "studio451.ru",
+            "email": "info@studio451.ru",
+            "homepage": "https://studio451.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": 
+            {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+    "autoload": {
+        "psr-4": {
+            "studio451\\yii2jsonrpc2api\\": "src"
+        }
+    }
+}
