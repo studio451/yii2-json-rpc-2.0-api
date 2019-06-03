@@ -1,16 +1,16 @@
-##[JSON-RPC 2.0](http://www.jsonrpc.org/specification) for Yii2 API with CRUD+ actions
+## Yii2 extention for [JSON-RPC 2.0](http://www.jsonrpc.org/specification) API with CRUD+ actions
 
 ## Table of Contents
  - [Features](#features)
  - [Using](#using)
  - [CRUD+ API actions](#crud-api-actions)
-  - [Example Create](#example-create)
-  - [Example Update](#example-update)
-  - [Example Delete](#example-delete)
-  - [Example DeleteAll](#example-delete-all)
-  - [Example View](#example-view)
+  - [Example Create action](#example-create)
+  - [Example Update action](#example-update)
+  - [Example Delete action](#example-delete)
+  - [Example DeleteAll action](#example-delete-all)
+  - [Example View action](#example-view)
  - [List API action](#list-api-action)
-  - [Example List](#example-list)
+  - [Example List action](#example-list)
 
 ## Features:
 
@@ -27,7 +27,7 @@ Easiest way to use in 4 steps:<br/>
 
     in ./composer.json add into 'require' section
     ~~~javascript
-        "studio451/yii2-json-rpc-2.0-API": "1.*"
+    "studio451/yii2-json-rpc-2.0-api": "1.*"
     ~~~
     and in console/terminal run
     ~~~php
@@ -36,11 +36,11 @@ Easiest way to use in 4 steps:<br/>
 2. Use namespace in your controller for CRUD+ actions
 
     ~~~php
-    use \jsonrpc2API\ActiveController;
+    use \studio451\yii2jsonrpc2api\ActiveController;
     ~~~
     change extends class to
     ~~~php
-    class ModelController extends \jsonrpc2API\ActiveController {
+    class ModelController extends \studio451\yii2jsonrpc2api\ActiveController {
     
         public $modelClass = 'app\models\Model';    
         public $dataFilter = 'app\models\ModelFilter';
@@ -50,12 +50,11 @@ Easiest way to use in 4 steps:<br/>
     }
     ~~~
 
-3. Make json request to controller (used pretty urls without index.php)
-    >Request method MUST be POST and Content-type MUST be application/json
+3. Make json request to controller (used pretty urls without index.php). Request method MUST be POST and Content-type MUST be application/json.
 
 ## CRUD+ API actions
 
-For call JsonRPC API you may use this function:
+To call the JSONRPC API, you can use this feature:
 
 ~~~javascript
 function sendToJsonrpc2(url, method, params, callback){
@@ -79,6 +78,7 @@ function sendToJsonrpc2(url, method, params, callback){
         }
     });
 }
+
 function createUUID() {
     const fmt = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';
     const rnd = Array.from(crypto.getRandomValues(new Uint8Array(32))).map(n => n & 0xf);
@@ -89,12 +89,10 @@ function createUUID() {
 
 
 
-CreateAction
-
-### Example
-    request
-    ~~~javascript
-    {
+### Example Create action
+request:
+~~~javascript
+{
   "type": "POST",
   "dataType": "JSON",
   "url": "/jsonrpc2/v1/author",
@@ -109,10 +107,10 @@ CreateAction
     }
   }
 }
-    ~~~
-    and response will be
-    ~~~javascript
-    {
+~~~
+and response will be:
+~~~javascript
+{
   "jsonrpc": "2.0",
   "id": "6187d757-9a9b-469b-87d7-54b080304099",
   "method": "create",
@@ -124,12 +122,11 @@ CreateAction
     "books": []
   }
 }
-    ~~~
+~~~
 
-UpdateAction
-### Example
-    request
-    ~~~javascript
+### Example Update action
+request:
+~~~javascript
 {
   "type": "POST",
   "dataType": "JSON",
@@ -145,9 +142,9 @@ UpdateAction
     }
   }
 }
- ~~~
-    and response will be
-    ~~~javascript
+~~~
+and response will be:
+~~~javascript
 {
   "jsonrpc": "2.0",
   "id": "982f4f47-e72e-4b3c-90f5-f8422a5f90b1",
@@ -164,11 +161,10 @@ UpdateAction
   }
 }
 ~~~
-ViewAction
-### Example
-    request
-    ~~~javascript
 
+### Example View action
+request:
+~~~javascript
 {
   "type": "POST",
   "dataType": "JSON",
@@ -184,8 +180,8 @@ ViewAction
   }
 }
 ~~~
-    and response will be
-    ~~~javascript
+and response will be:
+~~~javascript
 {
   "jsonrpc": "2.0",
   "id": "3670b63a-55d3-40a9-965e-7f61a72858b0",
@@ -211,11 +207,10 @@ ViewAction
   }
 }
 ~~~
-DeleteAction
-### Example
-    request
-    ~~~javascript
 
+### Example Delete action
+request:
+~~~javascript
 {
   "type": "POST",
   "dataType": "JSON",
@@ -231,8 +226,8 @@ DeleteAction
   }
 }
 ~~~
-    and response will be
-    ~~~javascript
+and response will be:
+~~~javascript
 {
   "jsonrpc": "2.0",
   "id": "5e53b745-25f4-4039-87ab-e72acc5fd827",
@@ -241,11 +236,10 @@ DeleteAction
   "result": true
 }
 ~~~
-and DeleteAllAction
-### Example
-    request
-    ~~~javascript
 
+### Example DeleteAll action
+request:
+~~~javascript
 {
   "type": "POST",
   "dataType": "JSON",
@@ -259,8 +253,8 @@ and DeleteAllAction
   }
 }
 ~~~
-    and response will be
-    ~~~javascript
+and response will be:
+~~~javascript
 {
   "jsonrpc": "2.0",
   "id": "cd340790-fce7-468b-a5dd-47f1e0a227c0",
@@ -272,12 +266,11 @@ and DeleteAllAction
 
 ## List API action
 
-Based on Yii2 ActiveDataProvider and used jsonrpc2API\ActiveController::dataFilter
+Based on Yii2 ActiveDataProvider and used \studio451\yii2jsonrpc2api\ActiveController::dataFilter
 
-### Example
-    request
-    ~~~javascript
-
+### Example List action
+request:
+~~~javascript
 {
   "type": "POST",
   "dataType": "JSON",
@@ -312,8 +305,8 @@ Based on Yii2 ActiveDataProvider and used jsonrpc2API\ActiveController::dataFilt
   }
 }
 ~~~
-    and response will be
-    ~~~javascript
+and response will be:
+~~~javascript
 {
   "jsonrpc": "2.0",
   "id": "d159328b-7b55-4b3b-88d5-f97eafce13f9",
@@ -336,7 +329,13 @@ Based on Yii2 ActiveDataProvider and used jsonrpc2API\ActiveController::dataFilt
 }
 ~~~
 
-<br/>
-<br/>
-#####Live demo https://yii2jsonrpc2api.studio451.ru
-#####Source of live demo https://github.com/studio451/yii2-json-rpc-2.0-API-live-demo
+### More info: ###
+----------
+* [Live DEMO]( https://yii2jsonrpc2api.studio451.ru)
+* [Source of live DEMO](https://github.com/studio451/yii2-json-rpc-2.0-api-live-demo)
+
+#### Contacts ####
+
+info@studio451.ru
+
+[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://www.yiiframework.com/)
