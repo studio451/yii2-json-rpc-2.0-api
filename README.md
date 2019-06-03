@@ -1,18 +1,18 @@
 ## Yii2 extention for [JSON-RPC 2.0](http://www.jsonrpc.org/specification) API with CRUD+ actions
 
-## Table of Contents
- - [Features](#features)
- - [Using](#using)
- - [CRUD+ API actions](#crud-api-actions)
-  - [Example Create action](#example-create-action)
-  - [Example Update action](#example-update-action)
-  - [Example Delete action](#example-delete-action)
-  - [Example DeleteAll action](#example-delete-all-action)
-  - [Example View action](#example-view)
- - [List API action](#list-api-action)
-  - [Example List action](#example-list-action)
+### Table of Contents
+ * [Features](#features)
+ * [Using](#using)
+ * [CRUD+ API actions](#crud-api-actions)
+   * [Example Create action](#example-create-action)
+   * [Example Update action](#example-update-action)
+   * [Example View action](#example-view-action)
+   * [Example Delete action](#example-delete-action)
+   * [Example DeleteAll action](#example-deleteall-action)
+ * [List API action](#list-api-action)
+   * [Example List action](#example-list-action)
 
-## Features:
+### Features:
 
 1. CRUD API actions
 2. List API action
@@ -20,7 +20,7 @@
 4. CORS Support
 
 
-## Using
+### Using
 Easiest way to use in 4 steps:<br/>
 
 1. Install via composer
@@ -52,7 +52,7 @@ Easiest way to use in 4 steps:<br/>
 
 3. Make json request to controller (used pretty urls without index.php). Request method MUST be POST and Content-type MUST be application/json.
 
-## CRUD+ API actions
+### CRUD+ API actions
 
 To call the JSONRPC API, you can use this feature:
 
@@ -89,7 +89,7 @@ function createUUID() {
 
 
 
-### Example Create action
+#### Example Create action
 request:
 ~~~javascript
 {
@@ -124,7 +124,7 @@ and response will be:
 }
 ~~~
 
-### Example Update action
+#### Example Update action
 request:
 ~~~javascript
 {
@@ -162,7 +162,7 @@ and response will be:
 }
 ~~~
 
-### Example View action
+#### Example View action
 request:
 ~~~javascript
 {
@@ -208,7 +208,7 @@ and response will be:
 }
 ~~~
 
-### Example Delete action
+#### Example Delete action
 request:
 ~~~javascript
 {
@@ -237,7 +237,7 @@ and response will be:
 }
 ~~~
 
-### Example DeleteAll action
+#### Example DeleteAll action
 request:
 ~~~javascript
 {
@@ -264,11 +264,11 @@ and response will be:
 }
 ~~~
 
-## List API action
+### List API action
 
 Based on Yii2 ActiveDataProvider and used \studio451\yii2jsonrpc2api\ActiveController::dataFilter
 
-### Example List action
+#### Example List action
 request:
 ~~~javascript
 {
